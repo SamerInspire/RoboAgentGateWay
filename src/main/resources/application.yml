@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: Fnss069004+
+    url: jdbc:sqlserver://192.168.80.73;databaseName=Qiwa_AI_V01
+    username: f_swalha_USR
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      naming: 
+        physical: strategy
+        implicit: strategy
+      
+server:
+     port: 9000
+     
+logging:
+  file:
+    path: 'D:\Java Workspace\RoboAgent_Gateway\target\test-classes'

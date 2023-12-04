@@ -1,0 +1,12 @@
+spring:
+   datasource:
+     driverClassName: com.mysql.jdbc.Driver
+     url: jdbc:mysql://localhost/complaint?characterEncoding=utf-8&serverTimezone=GMT%2B8
+     username: root
+     password: Samer1234**
+   jpa:
+     hibernate:
+       ddl-auto: update
+
+server:
+     port: 9000

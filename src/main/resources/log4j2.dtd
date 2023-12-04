@@ -1,0 +1,31 @@
+<!ELEMENT Configuration (Properties,Appenders,Loggers)>
+<!ATTLIST Configuration status NMTOKEN #REQUIRED>
+<!ELEMENT Properties (Property)>
+<!ELEMENT Property (#PCDATA)>
+<!ATTLIST Property name NMTOKEN #REQUIRED>
+<!ELEMENT Appenders (RollingFile)>
+<!ELEMENT RollingFile (PatternLayout,Policies,DefaultRolloverStrategy)>
+<!ATTLIST RollingFile name NMTOKEN #REQUIRED>
+<!ATTLIST RollingFile fileName CDATA #REQUIRED>
+<!ATTLIST RollingFile filePattern CDATA #REQUIRED>
+<!ELEMENT PatternLayout (pattern)>
+<!ELEMENT pattern (#PCDATA)>
+<!ELEMENT Policies (TimeBasedTriggeringPolicy,SizeBasedTriggeringPolicy)>
+<!ELEMENT TimeBasedTriggeringPolicy EMPTY>
+<!ATTLIST TimeBasedTriggeringPolicy interval NMTOKEN #REQUIRED>
+<!ATTLIST TimeBasedTriggeringPolicy modulate NMTOKEN #REQUIRED>
+<!ELEMENT SizeBasedTriggeringPolicy EMPTY>
+<!ATTLIST SizeBasedTriggeringPolicy size NMTOKEN #REQUIRED>
+<!ELEMENT DefaultRolloverStrategy (Delete)>
+<!ATTLIST DefaultRolloverStrategy max NMTOKEN #REQUIRED>
+<!ELEMENT Delete (IfLastModified)>
+<!ATTLIST Delete basePath CDATA #REQUIRED>
+<!ATTLIST Delete maxDepth NMTOKEN #REQUIRED>
+<!ELEMENT IfLastModified EMPTY>
+<!ATTLIST IfLastModified age NMTOKEN #REQUIRED>
+<!ELEMENT Loggers (Root)>
+<!ELEMENT Root (appender-ref)>
+<!ATTLIST Root level NMTOKEN #REQUIRED>
+<!ATTLIST Root additivity NMTOKEN #REQUIRED>
+<!ELEMENT appender-ref EMPTY>
+<!ATTLIST appender-ref ref NMTOKEN #REQUIRED>
